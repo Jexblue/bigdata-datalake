@@ -10,15 +10,18 @@ Catalogue : Marque, Nom, Puissance, Longueur, NbPlaces, NbPortes, Couleur, Occas
 
 Clients : Age, Sexe, Taux, SituationFamiliale, NbEnfantsAcharge, 2ème voiture, Immatriculation
 
-`Clients_0.csv` peut être stocké dans une base de données NoSQL telle que MongoDB, car il a une structure flexible et peut être stocké sous forme de documents. Les bases de données NoSQL sont également adaptées pour gérer des données en temps réel, ce qui peut être utile pour les données clients.
+`Clients_0.csv` peut être stocké dans une base de données NoSQL, ici nous choisissons MongoDB, car il a une structure flexible et peut être stocké sous forme de documents. Les bases de données NoSQL sont également adaptées pour gérer des données en temps réel, ce qui peut être utile pour les données clients.
 
 Immatriculation : Immatriculation, Marque, Nom, Puissance, Longueur, NbPlaces, NbPortes, Couleur, Occasion, Prix
 
-`Immatriculations.csv` peut être stocké dans une base de données NoSQL telle que MongoDB, car il est semi-structuré et peut être stocké sous forme de documents. 
+`Immatriculations.csv` peut être stocké dans une base de données NoSQL, ici nous choisissons Oracle NoSql, car il est semi-structuré et peut être stocké sous forme de documents. 
 
 Marketing : Age, Sexe, Taux, SituationFamiliale, NbEnfantsAcharge, 2ème voiture
 
-`Marketing.csv` peut être stockées dans une base de données NoSQL telle que MongoDB, car il a une structure flexible et peut être stocké sous forme de documents. Les bases de données NoSQL sont également adaptées pour gérer des données en temps réel, ce qui peut être utile pour les données marketing.
+`Marketing.csv` peut être stockées dans une base de données NoSQL, ici nous choisissons Oracle NoSql, car il a une structure flexible et peut être stocké sous forme de documents. Les bases de données NoSQL sont également adaptées pour gérer des données en temps réel, ce qui peut être utile pour les données marketing.
 
-En résumé, les données `CO2` et `Catalogue` peuvent être stockées dans `HDFS`, tandis que les données `clients`, `immatriculation` et `marketing` peuvent être stockées dans `une base de données NoSQL` telle que MongoDB, ......
-Aussi les les finier `CO2` et `Catalogue` seront aussi deposer dans un repertoire windows qui sera utiliser en cas de defaillance du HDFS
+En résumé, les données `CO2` et `Catalogue` vont être stockées dans `HDFS`, tandis que les données `clients`, `immatriculation` et `marketing` vont être stockées dans `une base de données NoSQL` telle que MongoDB et oracle nosql
+Aussi les fichiers `CO2` et `Catalogue` seront aussi déposés dans un repertoire windows qui sera utilisé en cas de défaillance du HDFS
+
+
+Nous allons utiliser Kafka pour faire la mise à jour en temps réel de la table clients dans MongoDB lorsque le fichier sur HDFS est modifié.
